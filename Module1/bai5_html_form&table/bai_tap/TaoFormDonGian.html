@@ -6,12 +6,12 @@
 </head>
 <body>
 <form method="get" action="TaoFormDonGian.html\">
-    <fieldset style="width: 400px; height: 200px">
+    <fieldset style="width: 400px; height: 245px">
         <h3 style="background-color: coral; color: aliceblue">SỞ THÍCH CỦA BẠN</h3>
         <label for="Hoten" style="color: blue">Họ và tên:</label>
         <input type="text" id="Hoten" name="yourname"><br><br>
         &emsp; <label for="email" style="color: blue">Email:</label>
-        <input type="text" id="email" name="email"><br>
+        <input type="text" id="email" name="email"><br><br>
         &emsp; <label style="color: blue"> So thich</label>
         <input type="checkbox" name="hobby" value="Thể thao">Thể thao
         <input type="checkbox" name="hobby" value="Âm nhạc">Âm nhạc
@@ -19,10 +19,38 @@
         &emsp;&emsp;&emsp;&emsp;&ensp; <input type="checkbox" name="hobby" value="Lướt web">Lướt web
         <input type="checkbox" name="hobby" value="Chơi game">Chơi game
         <input type="checkbox" name="hobby" value="Điện ảnh">Điện ảnh<br>
-        &emsp;&emsp;&emsp;&emsp;&ensp; <input type="checkbox" name="hobby" value="Du lịch">Du lịch<br>
+        &emsp;&emsp;&emsp;&emsp;&ensp; <input type="checkbox" name="hobby" value="Du lịch">Du lịch<br><br>
         &emsp;&emsp;&emsp;&emsp;&ensp;<input type="submit" name="Submit Form" value="Gửi thông tin">
         &emsp;&emsp;&emsp;&emsp;&ensp;<input type="reset" name="Reset Form" value="Nhập lại">
     </fieldset>
+</form>
+<br><br><br><br>
+<form method="get" action="TaoFormDonGian.html">
+    <fieldset style="background: darkkhaki;width: 400px; height: 410px">
+        <h3 style="background-color: aqua; color: blue">ĐĂNG KÍ HỌC VIÊN</h3>
+        <label for="ten" style="color: blue">Họ và tên:</label>
+        <input type="text" id="ten" name="yourname"><br><br>
+        <label for="Ngaysinh" style="color: blue">Ngày sinh:</label>
+        <textarea cols="10" rows="1" id="ngaysinh" name="Date of birth"></textarea><br><br>
+        <label style="color: blue"> Giới Tính:</label>
+        <input type="radio" name="boy" value="boy"> Nam
+        <input type="radio" name="gỉrl" value="girl"> Nữ<br><br>
+        &emsp;<label style="color: blue">Địa chỉ:</label>
+        <textarea cols="30" rows="4"></textarea><br><br>
+        &emsp;&emsp;<label for="class" style="color: blue">Lớp: </label>
+        <select id="class" style="width: 150px; height: 20px">
+            <option value="selective">--Chọn lớp--</option>
+            <option value="17DT2">17DT2</option>
+            <option value="17DT3">17DT3</option>
+            <option value="18DT2">18DT2</option>
+            <option value="18DT3">18DT3</option>
+        </select><br><br>
+        &emsp; <label for="email" style="color: blue">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <label style="color: blue"> Điện thoại:</label>
+        <input type="text" name="phone"><br><br>
+        &emsp;&emsp;&emsp;&emsp;&ensp;<input type="submit" name="Submit Form" value="Đăng kí">
+        &emsp;&emsp;&emsp;&emsp;&ensp;<input type="reset" name="Reset Form" value="Nhập lại">
 </form>
 </body>
 </html>
