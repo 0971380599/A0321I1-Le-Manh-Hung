@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaoFormlaySurveyKhachHang</title>
+</head>
+<body>
+    <h3>Market Research Survey</h3>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    <form>
+        <label for="age"><b>What is your age range?</b></label><br>
+        <select id="age" style="width: 400px; height: 20px">
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-50">35-50</option>
+            <option value="50+">50+</option>
+        </select><br><br>
+        <label for="income"><b>What is your yearly income range?</b></label><br>
+        <select id="income" style="width: 400px; height: 20px">
+            <option value="0-25000">$0-$25000</option>
+            <option value="25000-50000">%25000-$50000</option>
+            <option value="50000-100000">$50000-$100000</option>
+            <option value="100000+">$100000+</option>
+        </select><br><br>
+        <label><b>Gender Identity</b></label><br>
+        <input type="radio" name="gender" value="male"> Male <br>
+        <input type="radio" name="gender" value="female"> Female <br>
+        <input type="radio" name="gender" value="Nonbinary"> Nonbinary <br>
+        <input type="radio" name="gender" value="Other" id="other">
+        <label for="other"></label> Other <br>
+        &emsp;&emsp;&ensp; <input type="text" ><br><br>
+        <label><b>Which of the following products have your purchased in the last 2 months. Please check all that apply.</b></label><br>
+        <input type="checkbox" name="hobby" value="Product 1">Product 1<br>
+        <input type="checkbox" name="hobby" value="Product 2">Product 2<br>
+        <input type="checkbox" name="hobby" value="Product 3">Product 3<br><br>
+        <label><b>How often would you use our new product?</b></label><br><br>
+        <label><input type="radio" name="new" value="daily"> Daily </label><br>
+        <label><input type="radio" name="new" value="weekly"> Weekly </label><br>
+        <label><input type="radio" name="new" value="Monthly"> Monthly </label><br>
+        <label><b>What would you pay for the new product?</b></label><br><br>
+        $ <textarea cols="5"; rows="1"> </textarea> . <textarea cols="1" rows="1"></textarea><br>
+        &emsp;<label>Dollars</label>&emsp;<label>Cents</label>
+        <p><b>What features would you like to see in the new product.</b></p>
+    </form>
+</body>
+</html>
