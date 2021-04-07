@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HienThiDauRa</title>
+</head>
+<body>
+<!--    hiển thị kết quả sử hụng hàm alert()-->
+        <P>hiển thị kết quả sử hụng hàm alert()</P>
+    <button type="button" onclick="showMessage();">Click Me! </button>
+    <script>
+        function showMessage() {
+            alert("Xin chào!")
+        }
+    </script><br><br>
+<!-- Hiển thị kết quả sử dụng thẻ HTML:-->
+        <p>Hiển thị kết quả sử dụng thẻ HTML:</p>
+    <Div id="messageP"></Div>
+    <button type="button" onclick="showMessage1();">Click Me!</button>
+    <script>
+        function showMessage1() {
+            document.getElementById('messageP').innerHTML = 'Xin Chào'
+        }
+    </script><br><br>
+<!-- kết quả hiển thị hàm document.write()-->
+        <p>kết quả hiển thị hàm document.write()</p>
+    <button type="button" onclick="showMessage2();">Click Me</button>
+    <script>
+        function showMessage2() {
+            document.write('Xin Chào!')
+        }
+    </script><br><br>
+<!-- hiển thị kết quả sử dụng hàm consele.log()-->
+        <p>hiển thị kết quả sử dụng hàm consele.log()</p>
+    <button type="button" onclick="showMessage3()">Click Me</button>
+<script>
+    function showMessage3() {
+        console.log(' Xin Chào!')
+    }
+</script>
+</body>
+</html>
