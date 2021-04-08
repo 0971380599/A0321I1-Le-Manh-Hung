@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td,th { width: 200px}
+    </style>
+</head>
+<body>
+    <form>
+        <table >
+            <tr>
+                <th> Amount </th>
+                <th> From Currency</th>
+                <th> To Currency</th>
+            </tr>
+            <tr>
+                <th><input id="value" type="number" name="many"></th>
+                <th>
+                    <select id="From">
+                        <option value="VietNam">VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </th>
+                <th>
+                    <select id="To">
+                        <option value="USD">USD</option>
+                        <option value="VietNam">VietNam</option>
+                    </select>
+                </th>
+                <td>
+                    <button type="button" onclick="convert();">Convert</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function convert() {
+            let Fromcu = document.getElementById("From").value;
+            let Tocu = document.getElementById("To").value;
+            let valueconvert = document.getElementById("value").value;
+            let Convert;
+            if (Fromcu === "USD" && Tocu === "VietNam") {
+                Convert = valueconvert * 24000;
+                alert(Convert);
+            } else if (Fromcu === "VietNam" && Tocu === "USD") {
+                Convert = valueconvert/24000;
+                alert(Convert);
+            } else alert("Trùng đơn vị chuyển tiền vui lòng chọn lại")
+        }
+    </script>
+</body>
+</html>

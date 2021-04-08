@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input id="Number1" type="number" name="Sothu1">
+        <input id="Number2" type="number" name="Sothu2"><br><br>
+        <button type="button" onclick="Sum()">Addition(+)</button>
+        <button type="button" onclick="Sub()">Addition(-)</button>
+        <button type="button" onclick="Mul()">Addition(x)</button>
+        <button type="button" onclick="Div()">Addition(/)</button>
+    </form>
+    <script>
+        function Sum(){
+            let Number1 = parseFloat(document.getElementById("Number1").value);
+            let Number2 = parseFloat(document.getElementById("Number2").value);
+            let Sum = Number1 + Number2;
+            alert(Sum);
+        }
+        function Sub() {
+            let Number1 = parseFloat(document.getElementById("Number1").value);
+            let Number2 = parseFloat(document.getElementById("Number2").value);
+            let Sub = Number1 - Number2;
+            alert(Sub);
+        }
+        function Mul() {
+            let Number1 = parseFloat(document.getElementById("Number1").value);
+            let Number2 = parseFloat(document.getElementById("Number2").value);
+            let Mul = Number1 * Number2;
+            alert(Mul);
+        }
+        function Div() {
+            let Number1 = parseFloat(document.getElementById("Number1").value);
+            let Number2 = parseFloat(document.getElementById("Number2").value);
+            let Div = Number1 / Number2;
+            alert(Div);
+        }
+
+    </script>
+</body>
+</html>
