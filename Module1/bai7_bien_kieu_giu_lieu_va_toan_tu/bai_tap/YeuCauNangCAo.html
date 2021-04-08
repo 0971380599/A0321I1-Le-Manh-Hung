@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 50px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input style="width: 230px; height: 25px" type="text" name="hienthi" id="hienthi"><br><br>
+        <button type="button" value="7" onclick="hienthi7()">7</button>
+        <button type="button" value="8" onclick="hienthi8()">8</button>
+        <button type="button" value="9" onclick="hienthi9()">9</button>
+        <button type="button" value="/" onclick="Div()">/</button>
+        <br>
+        <button type="button" value="4" onclick="hienthi4()">4</button>
+        <button type="button" value="5" onclick="hienthi5()">5</button>
+        <button type="button" value="6" onclick="hienthi6()">6</button>
+        <button type="button" value="*" onclick="Mul()">x</button>
+        <br>
+        <button type="button" value="1" onclick="hienthi1()">1</button>
+        <button type="button" value="2" onclick="hienthi2()">2</button>
+        <button type="button" value="3" onclick="hienthi3()">3</button>
+        <button type="button" value="-" onclick="Sub()">-</button>
+        <br>
+        <button type="button" value="0" onclick="hienthi0()">0</button>
+        <button type="button" onclick="">.</button>
+        <button type="button" onclick="ketqua()" style="background-color: blue; color: white">=</button>
+        <button type="button" value="+" onclick="Sum()">+</button>
+    </form>
+ <script>
+
+     function hienthi0() {
+         hienthi.value += 0;
+     }
+     function hienthi1() {
+         hienthi.value += 1;
+     }
+     function hienthi2() {
+         hienthi.value += 2;
+     }
+     function hienthi3() {
+         hienthi.value += 3;
+     }
+     function hienthi4() {
+         hienthi.value += 4;
+     }
+     function hienthi5() {
+         hienthi.value += 5;
+     }
+     function hienthi6() {
+         hienthi.value += 6;
+     }
+     function hienthi7() {
+         hienthi.value += 7;
+     }
+     function hienthi8() {
+         hienthi.value += 8;
+     }
+     function hienthi9() {
+         hienthi.value += 9;
+     }
+     function Sum() {
+         hienthi.value += "+";
+     }
+     function Sub() {
+         hienthi.value += "-";
+     }
+     function Mul() {
+         hienthi.value += "*";
+     }
+     function Div() {
+         hienthi.value += "/";
+     }
+     function ketqua() {
+         hienthi.value = eval(maytinh.hienthi.value);
+     }
+ </script>
+</body>
+</html>
