@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-
+    <script>
+        let Imp = prompt("Nhập tên từ bàn phím:");
+        if ( Imp === "Admin") {
+            let Imppass = prompt(" Nhập mật khẩu:");
+            if (Imppass === "TheMaster") {
+                alert(" Welcome");
+            } else if ( Imppass === "null") {
+                alert("Canceled");
+            } else alert("Wrong password");
+        } else if( Imp === "null") {
+            alert("canceld");
+        } else alert("I don’t know you");
+    </script>
 </body>
 </html>
