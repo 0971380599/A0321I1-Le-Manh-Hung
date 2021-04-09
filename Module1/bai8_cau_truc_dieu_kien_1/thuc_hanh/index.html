@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year = parseInt(prompt("Enter a year: "));
+    let year4 = year%4;
+    let year100 = year%100;
+    let year400 = year%400;
+    if (year4 === 0 && year100 !== 0) {
+        alert(year + " là năm nhuận");
+    } else if (year100 === 0 && year400 === 0) {
+        alert(year + " là năm nhuận");
+    } else  alert(year + " không là năm nhuận");
+</script>
+</body>
+</html>
