@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img id="imageball" src="ball.png" style="width: 150px">
+    <p> Click button below to move the image to right</p>
+    <button type="button" onclick="moveRight();"> Click Me!</button>
+    <p> Click button below to move the image to left</p>
+    <button type="button" value="Click Me" onclick="moveLeft()"> Click Me!</button>
+    <script>
+        let Image = document.getElementById("imageball");
+        function init() {
+            Image.style.position = "Relative";
+            Image.style.left = "0px";
+        }
+        function moveRight() {
+            Image.style.left = parseInt(Image.style.left) - 10 +'px';
+        }
+        function moveLeft() {
+            Image.style.left = parseInt(Image.style.left) + 10 + 'px';
+        }
+        window.onload = init();
+    </script>
+</body>
+</html>
