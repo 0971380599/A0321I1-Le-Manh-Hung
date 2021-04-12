@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Do you love me?</h1>
+    <button type="button" name="co" value="yes" onclick="yes()"> Yes </button>
+    <button id = "jump" type="button" name="khong" value="no" onmouseover="no()"> No </button>
+<script>
+    let element = document.getElementById("jump");
+    function yes() {
+        alert("<3");
+    }
+    function init() {
+        element.style.position = "Relative";
+        element.style.left = "0px";
+      element.style.top = "0px";
+    }
+    function no() {
+        element.style.left = Math.random()*screen.width + "px";
+        element.style.top =  Math.random()*screen.height + "px";
+    }
+    window.onload = init();
+</script>
+</body>
+</html>

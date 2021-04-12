@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="mth" name="moth">
+        <button type="button" onclick="coun();" name="abc"> Tính số ngày </button>
+        <p id="diplay"></p>
+    </form>
+    <script>
+        function coun() {
+            let month = parseInt(document.getElementById("mth").value);
+            let month31 = "Tháng " + month + " có 31 ngày";
+            let month29 = "Tháng 2 có 28 hoặc 29 ngày";
+            let month30 = "tháng " + month + " có 30 ngày";
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("diplay").innerHTML = month31;
+                    break;
+                case 2:
+                    document.getElementById("diplay").innerHTML = month29;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById("diplay").innerHTML = month30;
+                    break;
+                default:
+                    document.getElementById("diplay").innerHTML = "Không có tháng này vui lòng nhập lại";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

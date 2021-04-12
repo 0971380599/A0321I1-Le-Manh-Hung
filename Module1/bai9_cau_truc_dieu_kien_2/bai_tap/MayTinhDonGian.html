@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            color: blue;
+            width: 50px;
+            height: 25px;
+        }
+        input{
+            width: 260px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset style="width: 280px">
+        <table>
+            <tr>
+                <th colspan="4"> <input type="text" name="hienthi" id="hienthi"><br><br> </th>
+            </tr>
+            <tr>
+                <th><button type="button"  value="7" onclick="hienthi7()">7</button> </th>
+                <th><button type="button" value="8" onclick="hienthi8()">8</button> </th>
+                <th><button type="button" value="9" onclick="hienthi9()">9</button> </th>
+                <th><button type="button" value="/" onclick="Div()">/</button> </th>
+            </tr>
+            <tr>
+                <th><button type="button" value="4" onclick="hienthi4()">4</button> </th>
+                <th> <button type="button" value="5" onclick="hienthi5()">5</button> </th>
+                <th> <button type="button" value="6" onclick="hienthi6()">6</button> </th>
+                <th>  <button type="button" value="*" onclick="Mul()">x</button> </th>
+            </tr>
+            <tr>
+                <th>  <button type="button" value="1" onclick="hienthi1()">1</button> </th>
+                <th> <button type="button" value="2" onclick="hienthi2()">2</button> </th>
+                <th>  <button type="button" value="3" onclick="hienthi3()">3</button> </th>
+                <th>  <button type="button" value="-" onclick="Sub()">-</button> </th>
+            </tr>
+            <tr>
+                <th>  <button type="button" value="0" onclick="hienthi0()">0</button> </th>
+                <th>  <button type="button" onclick="">.</button> </th>
+                <th>  <button type="button" onclick="ketqua()" style="background-color: blue; color: white">=</button> </th>
+                <th>  <button type="button" value="+" onclick="Sum()">+</button> </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<script>
+
+    function hienthi0() {
+        hienthi.value += 0;
+    }
+    function hienthi1() {
+        hienthi.value += 1;
+    }
+    function hienthi2() {
+        hienthi.value += 2;
+    }
+    function hienthi3() {
+        hienthi.value += 3;
+    }
+    function hienthi4() {
+        hienthi.value += 4;
+    }
+    function hienthi5() {
+        hienthi.value += 5;
+    }
+    function hienthi6() {
+        hienthi.value += 6;
+    }
+    function hienthi7() {
+        hienthi.value += 7;
+    }
+    function hienthi8() {
+        hienthi.value += 8;
+    }
+    function hienthi9() {
+        hienthi.value += 9;
+    }
+    function Sum() {
+        hienthi.value += "+";
+    }
+    function Sub() {
+        hienthi.value += "-";
+    }
+    function Mul() {
+        hienthi.value += "*";
+    }
+    function Div() {
+        hienthi.value += "/";
+    }
+    function ketqua() {
+        hienthi.value = eval(hienthi.value);
+    }
+</script>
+</body>
+</html>

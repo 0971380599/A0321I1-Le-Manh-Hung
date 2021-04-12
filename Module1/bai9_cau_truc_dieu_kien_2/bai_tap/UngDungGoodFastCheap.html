@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 30px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset style="width: 150px;">
+            <label for="status1" class="status1">
+                <input id="status1" type="checkbox" name="good" value="Good" onchange="click1()"> Good <br>
+            </label>
+            <label for="status2" class="status2">
+                <input id="status2" type="checkbox" name="good" value="Cheap" onchange="click2()"> Cheap <br>
+            </label>
+            <label for="status3" class="status3">
+                <input id="status3" type="checkbox" name="good" value="Fast" onchange="click3()"> Fast <br>
+            </label>
+        </fieldset>
+    </form>
+    <script>
+        let status1 = document.getElementById("status1");
+        let status2 = document.getElementById("status2");
+        let status3 = document.getElementById("status3");
+        function click1() {
+            if (status1.checked === true && status2.checked === true) {
+                status3.checked = false;
+            }
+        }
+        function click2() {
+             if (status2.checked === true && status3.checked === true) {
+                status1.checked = false;
+            }
+        }
+        function click3() {
+            if (status1.checked === true && status3.checked === true) {
+                status2.checked = false;
+            }
+        }
+    </script>
+</body>
+</html>

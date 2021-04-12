@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 500px;
+            height: 100px ;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <table cellspacing="1"  cellpadding="5">
+            <tr>
+                <th> <img id="image1" src="image/panda_swap_part1x1.jpg" onclick="next1();"></th>
+            </tr>
+            <tr>
+                <th> <img id="image2" src="image/panda_swap_part2x1.jpg" onclick="next2();"></th>
+            </tr>
+            <tr>
+                <th> <img id="image3" src="image/panda_swap_part3x1.jpg" onclick="next3();"></th>
+            </tr>
+            <tr>
+                <th> <img id="image4" src="image/panda_swap_part4x1.jpg" onclick="next4();"></th>
+            </tr>
+            <tr>
+                <th> <img id="image5" src="image/panda_swap_part5x1.jpg" onclick="next5();"></th>
+            </tr>
+        </table>
+    </center>
+    <script>
+        let image1 = document.getElementById("image1");
+        let image2 = document.getElementById("image2");
+        let image3 = document.getElementById("image3");
+        let image4 = document.getElementById("image4");
+        let image5 = document.getElementById("image5");
+        function next1() {
+            if(image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg") {
+                image1.src = "image/funny-cat1_part1x1.jpg";
+            } else if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg") {
+                image1.src = "image/monkey_part1x1.jpg";
+            } else image1.src = "image/panda_swap_part1x1.jpg";
+            if (image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg"
+                && image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg"
+                && image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg"
+                && image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg"
+                && image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                alert("ghép đúng hình gấu trúc")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                alert("ghép đúng hình con mèo")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/monkey_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/monkey_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/monkey_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/monkey_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/monkey_part5x1.jpg") {
+                alert("ghép đúng hình con khỉ")
+            }
+        }
+        function next2() {
+            if(image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg") {
+                image2.src = "image/funny-cat1_part2x1.jpg";
+            } else if (image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg") {
+                image2.src = "image/monkey_part2x1.jpg";
+            } else image2.src = "image/panda_swap_part2x1.jpg";
+            if (image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg"
+                && image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg"
+                && image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg"
+                && image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg"
+                && image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                alert("ghép đúng hình gấu trúc")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                alert("ghép đúng hình con mèo")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/monkey_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/monkey_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/monkey_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/monkey_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/monkey_part5x1.jpg") {
+                alert("ghép đúng hình con khỉ")
+            }
+        }
+        function next3() {
+            if(image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg") {
+                image3.src = "image/funny-cat1_part3x1.jpg";
+            } else if (image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg") {
+                image3.src = "image/monkey_part3x1.jpg";
+            } else image3.src = "image/panda_swap_part3x1.jpg";
+            if (image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg"
+                && image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg"
+                && image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg"
+                && image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg"
+                && image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                alert("ghép đúng hình gấu trúc")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                alert("ghép đúng hình con mèo")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/monkey_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/monkey_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/monkey_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/monkey_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/monkey_part5x1.jpg") {
+                alert("ghép đúng hình con khỉ")
+            }
+        }
+        function next4() {
+            if(image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg") {
+                image4.src = "image/funny-cat1_part4x1.jpg";
+            } else if (image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg") {
+                image4.src = "image/monkey_part4x1.jpg";
+            } else image4.src = "image/panda_swap_part4x1.jpg";
+            if (image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg"
+                && image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg"
+                && image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg"
+                && image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg"
+                && image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                alert("ghép đúng hình gấu trúc")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                alert("ghép đúng hình con mèo")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/monkey_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/monkey_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/monkey_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/monkey_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/monkey_part5x1.jpg") {
+                alert("ghép đúng hình con khỉ")
+            }
+        }
+        function next5() {
+            if(image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                image5.src = "image/funny-cat1_part5x1.jpg";
+            } else if (image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                image5.src = "image/monkey_part5x1.jpg";
+            } else image5.src = "image/panda_swap_part5x1.jpg";
+            if (image1.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part1x1.jpg"
+                && image2.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part2x1.jpg"
+                && image3.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part3x1.jpg"
+                && image4.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part4x1.jpg"
+                && image5.src ===  "http://localhost:63342/bai_tap/image/panda_swap_part5x1.jpg") {
+                alert("ghép đúng hình gấu trúc")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/funny-cat1_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/funny-cat1_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/funny-cat1_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/funny-cat1_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/funny-cat1_part5x1.jpg") {
+                alert("ghép đúng hình con mèo")
+            }
+            if (image1.src === "http://localhost:63342/bai_tap/image/monkey_part1x1.jpg"
+                && image2.src === "http://localhost:63342/bai_tap/image/monkey_part2x1.jpg"
+                && image3.src === "http://localhost:63342/bai_tap/image/monkey_part3x1.jpg"
+                && image4.src === "http://localhost:63342/bai_tap/image/monkey_part4x1.jpg"
+                && image5.src === "http://localhost:63342/bai_tap/image/monkey_part5x1.jpg") {
+                alert("ghép đúng hình con khỉ")
+            }
+        }
+    </script>
+</body>
+<script>
+</script>
+</html>
