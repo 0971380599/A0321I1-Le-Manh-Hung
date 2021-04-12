@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let gk = parseInt(prompt("Nhập điểm giữa kì:"));
+    let ck = parseInt(prompt("Nhập điểm cuối kì:"));
+    let TongKet = gk*0.3 + ck*0.7;
+    if (TongKet>8) {
+        alert("Học sinh đạt loại giỏi")
+    } else if (TongKet>6.5) {
+        alert("Học sinh đạt loại khá")
+    } else if (TongKet>5) {
+        alert("Học sinh đạt loại trung bình")
+    } else if (TongKet>4) {
+        alert("Học sinh đạt loại yếu")
+    } else   alert("Học sinh đạt loại kém")
+</script>
+</body>
+</html>

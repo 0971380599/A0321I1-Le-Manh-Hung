@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // số hoa hồng nhận được sẽ dựa trên doanh số bán hàng
+    let money = parseFloat(prompt("Nhập vào số tiền nhân viên bán được trong tháng này:"));
+    let Commission;
+    //nếu số tiền bán được lớn hơn 2.000.000 thì hoa hồng nhận được là 5%
+    if ( money < 200000) {
+        Commission = money*0.05;
+    } else if (money <5000000) {
+        //hoa hồng nhận được trong khoảng tiền từ 2.000.000 đến 5.000.000 là 7%
+        Commission = 2000000*0.05 + (money - 2000000)* 0.007;
+    } else if (money < 10000000) {
+        //hoa hồng nhận được trong khoảng tiền từ 5.000.000 đến 10.000.000 là 10%
+        Commission = 2000000*0.05 + 3000000* 0.007 + (money - 5000000)*0.13 ;
+    } else {
+        //hoa hồng nhận khi doanh số bán hàng đạt trên 10.000.000 là 15%
+        Commission = 2000000*0.05 + 3000000* 0.007 + (10000000 - 5000000)*0.13 + (money -10000000)*0.15;
+    }
+    alert("Số tiền hoa hồng người bán hàng nhận được trong tháng này là: " + Commission);
+</script>
+</body>
+</html>
