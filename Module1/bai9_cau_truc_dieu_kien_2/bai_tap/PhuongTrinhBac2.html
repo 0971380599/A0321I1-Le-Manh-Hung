@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt("Nhập hệ số a: "));
+        let b = parseFloat(prompt("Nhập hệ số b:"));
+        let c = parseFloat(prompt("Nhập hệ số c:"));
+        let Delta = b*b-4*a*c;
+        let x1;
+        let x2;
+        //Khi delta > 0 phương trình có 2 nghiệm riêng biệt
+        if (Delta>0) {
+            x1 = (-b+Math.sqrt(Delta))/(2*a);
+            x2 = (-b-Math.sqrt(Delta))/(2*a);
+            alert("Phương trình có 2 nghiệm phân biệt x1 = " + x1 + "; x2 = " + x2);
+        } else if (Delta === 0) {
+            // Khi Delta = 0 phương trình có nghiệm kép
+            x1 = x2 = (-b)/(2*a);
+            alert("Phương trình có 2 nghiệm kép x1=x2=" + x1);
+        } else // Khi Delta <0 phương trình vô nghiệm
+            alert( "Phương trình vô nghiệm");
+    </script>
+</body>
+</html>
