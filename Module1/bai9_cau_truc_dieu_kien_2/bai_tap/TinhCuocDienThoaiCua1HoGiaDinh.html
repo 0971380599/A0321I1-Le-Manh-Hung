@@ -6,7 +6,18 @@
 </head>
 <body>
     <script>
-        let MoneyPhone = 
+        let time = parseFloat(prompt("Nhập số phút gọi trong tháng này"));
+        //phí thuê bao bắt buộc là 25.000
+        let MoneyPhone = 25000;
+        if (time < 50) {
+            // 900 cho 50 phút gọi đầu tiên
+            MoneyPhone = MoneyPhone + 600 * time;
+        } else if (time < 200) {
+            //400 đồng cho mỗi phút gọi của 150p tiếp theo
+            MoneyPhone = MoneyPhone + 600 * 50 + 400 * (time - 50);
+            // 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+        }else MoneyPhone = MoneyPhone + 600 * 50 + 400 * 150 + 200 * (time -200);
+        alert("Cước điện thoại của hộ gia đình trong tháng này là: " + MoneyPhone);
     </script>
 </body>
 </html>
