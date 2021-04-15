@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseFloat(prompt("Nhập số kWh sử dụng trong tháng này"));
+    let MoneyElectricity = 0;
+    if (number <= 50) {
+        // Cho kWh từ 0 - 50 giá bán điện (đồng/kWh) 1.678
+        MoneyElectricity = 1.678 * number;
+    } else if (number <= 100) {
+        // Cho kWh từ  51 - 100 giá bán điện (đồng/kWh) 1.734
+        MoneyElectricity = 1.678 * 50 + 1.734 * (number - 50);
+    } else if (number <= 200) {
+        // Cho kWh từ 101 - 200 giá bán điện (đồng/kWh) 2.014
+        MoneyElectricity = 1.678 * 50 + 1.734 * 50 + 2.014 * (number - 100);
+    } else if (number <= 200) {
+        // Cho kWh từ 201 - 300 giá bán điện (đồng/kWh) 2.536
+        MoneyElectricity = 1.678 * 50 + 1.734 * 50 + 2.014 * 100 + 2.536 * (number-200) ;
+    } else if (number <= 200) {
+        // Cho kWh từ 301 - 400 giá bán điện (đồng/kWh) 2.834
+        MoneyElectricity = 1.678 * 50 + 1.734 * 50 + 2.014 * 100 + 2.536 * 100 + 2.834* (number - 300) ;
+        // Cho kWh từ 401 trở lên giá bán điện (đồng/kWh) 2.927
+    } else MoneyElectricity = 1.678 * 50 + 1.734 * 50 + 2.014 * 100 + 2.536 * 100 + 2.834* 100 +  2.927* (number - 400);
+    alert("Cước điện của hộ gia đình trong tháng này là: " + MoneyElectricity);
+</script>
+</body>
+</html>

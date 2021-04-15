@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let Money = parseFloat(prompt("Nhập số tiền thu nhập cá nhân trong 1 tháng: "));
+        let MoneyAfter = 0;
+        if (Money <= 4000000) {
+            //Bậc 1: 4 triệu đồng/tháng 0%;
+        } else if (Money <= 6000000) {
+            //Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;
+            MoneyAfter = (Money - 4000000) * 0.05;
+        } else if (Money <= 9000000) {
+            //Bậc 3: Trên 6 - 9 triệu đồng/tháng: 10%;
+            MoneyAfter = 2000000 * 0.05 + (Money-6000000) * 0.1;
+        } else if (Money <= 14000000) {
+            //Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;
+            MoneyAfter = 2000000 * 0.05 + 3000000 * 0.1 + (Money - 9000000) * 0.15;
+        } else if (Money <= 24000000) {
+            //Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;
+            MoneyAfter = 2000000 * 0.05 + 3000000 * 0.1 + 5000000 * 0.15 + (Money - 14000000)*0.2;
+        } else if (Money <= 44000000) {
+            //Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;
+            MoneyAfter = 2000000 * 0.05 + 3000000 * 0.1 + 5000000 * 0.15 + 10000000 * 0.2 + (Money - 24000000) * 0.25;
+        } else if (Money <= 84000000) {
+            //Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;
+            MoneyAfter = 2000000 * 0.05 + 3000000 * 0.1 + 5000000 * 0.15 + 10000000 * 0.2 + 20000000 * 0.25 + (Money - 44000000) * 0.3;
+            //Bậc 8: Trên 84 tr35iệu đồng: 35%.
+        } else MoneyAfter = 2000000 * 0.05 + 3000000 * 0.1 + 5000000 * 0.15 + 10000000 * 0.2 + 20000000 * 0.25 + 40000000 * 0.3 + (Money - 84000000) * 0.35;
+        alert("Thuế thu nhập cá nhân trong tháng này là: " + MoneyAfter);
+    </script>
+</body>
+</html>
