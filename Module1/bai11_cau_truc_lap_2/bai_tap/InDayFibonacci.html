@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập số các số fibonacci cần in: "));
+    let sum = 1;
+    let sum1 = 0;
+    let sum2 = 0;
+    for (i=0;i<number;i++) {
+        document.write(sum);
+        document.write("<br>");
+        sum1 = sum2;
+        sum2 = sum;
+        sum = sum1 + sum2;
+    }
+</script>
+</body>
+</html>

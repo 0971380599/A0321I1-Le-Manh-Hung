@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt("nhập số lượng số nguyên tố cần in ra:"));
+    let N = 2;
+    for ( let count =0; count <numbers; N++) {
+        if (N===2) {
+            document.write(N + "là số nguyên tố");
+            count++;
+            document.write("<br>");
+        } else if (N===3){
+            document.write(N + "là số nguyên tố");
+            count++;
+            document.write("<br>");
+        } else if (N===5) {
+            document.write(N + "là số nguyên tố");
+            count++;
+            document.write("<br>");
+        } else if (N === 7) {
+            document.write(N + "là số nguyên tố");
+            count++;
+            document.write("<br>");
+        } else {
+            if(N%2!==0 && N%3!==0 && N%5!==0 && N%7!==0) {
+                document.write(N + "là số nguyên tố");
+                count++;
+                document.write("<br>");
+            }
+        }
+    }
+</script>
+</body>
+</html>

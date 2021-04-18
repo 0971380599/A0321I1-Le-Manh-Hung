@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let money = parseFloat(prompt("Nhập số tiền số tiền ban đầu: "));
+        let month = parseFloat(prompt("Nhập số tháng cho vay: "));
+        let laiHangThang = parseFloat(prompt("Nhập lãi hàng tháng: "));
+        let TongSoTienLai=0;
+        for (let i=0; i<month;i++) {
+            TongSoTienLai += (money+TongSoTienLai) * laiHangThang;
+        }
+        alert(TongSoTienLai)
+    </script>
+</body>
+</html>
