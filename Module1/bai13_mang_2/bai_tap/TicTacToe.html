@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame" ></p>
+<button type="button" value="Change Value" onclick="changeValue()">Change Value</button>
+<script>
+    let b = document.getElementById("carogame");
+    let number = 0;
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 10; i++) {
+        board[i] = Array(".",".",".",".",".",".",".",".",".",".");
+        data += "<br/>";
+        for (let j = 0; j < 10; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = data;
+    function changeValue() {
+        number++;
+        if (number % 2 === 0) {
+            alert("người chơi X nhập");
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "x";
+            for (let i = 0; i < 10; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 10; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            b.innerHTML = data;
+        } else {
+            alert("người chơi O nhập");
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "o";
+            for (let i = 0; i < 10; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 10; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            b.innerHTML = data;
+        }
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                if ((board[i][j] === "x" && board[i + 1][j] === "x" && board[i + 2][j] === "x")
+                    || (board[i][j] === "x" && board[i][j+1] === "x" && board[i][j+2] === "x")
+                    || (board[i][j] === "x" && board[i+1][j+1] === "x" && board[i+2][j+2] === "x")) {
+                    alert("Người chơi X thắng")
+                } else if ((board[i][j] === "o" && board[i + 1][j] === "o" && board[i + 2][j] === "o")
+                    || (board[i][j] === "o" && board[i][j+1] === "o" && board[i][j+2] === "o")
+                    || (board[i][j] === "o" && board[i+1][j+1] === "o" && board[i+2][j+2] === "o")) {
+                    alert("Người chơi O thắng")
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

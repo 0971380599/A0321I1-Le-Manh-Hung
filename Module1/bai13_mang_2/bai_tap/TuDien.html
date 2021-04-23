@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhập từ cần dịch");
+    let english = ["run","go","school", "good", "one"];
+    let tiengviet = ["chạy","đi","trường học", "tốt", "một"];
+    for (let i=0; i<english.length; i++) {
+        if (input === english[i]) {
+            alert(tiengviet[i]);
+        } else if (i=== (english.length-1)) {
+            alert("không tìm thấy");
+        }
+    }
+</script>
+</body>
+</html>
