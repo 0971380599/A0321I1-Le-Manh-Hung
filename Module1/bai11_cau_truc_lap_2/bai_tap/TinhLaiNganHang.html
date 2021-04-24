@@ -9,11 +9,11 @@
         let money = parseFloat(prompt("Nhập số tiền số tiền ban đầu: "));
         let month = parseFloat(prompt("Nhập số tháng cho vay: "));
         let laiHangThang = parseFloat(prompt("Nhập lãi hàng tháng: "));
-        let TongSoTienLai=0;
+        let tongSoTienLai=0;
         for (let i=0; i<month;i++) {
-            TongSoTienLai += (money+TongSoTienLai) * laiHangThang;
+            tongSoTienLai += (money+tongSoTienLai) * laiHangThang;
         }
-        alert(TongSoTienLai)
+        alert(tongSoTienLai)
     </script>
 </body>
 </html>

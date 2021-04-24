@@ -8,20 +8,21 @@
     <button type="button" onclick="startgame()" > start </button>
 <script>
     function startgame() {
-        let ElectSpace1 = parseInt(prompt("bạn muốn bắt đầu đoán trong khoảng từ :"));
-        let ElectSpace2 = parseInt(prompt("đến :"));
-        var ElectSpace3 = parseInt(prompt("nhập giá trị bạn muốn đoán :"));
-        let Random = Math.floor(Math.random() * (ElectSpace2 - ElectSpace1) + ElectSpace1);
+        let electSpace1 = parseInt(prompt("bạn muốn bắt đầu đoán trong khoảng từ :"));
+        let electSpace2 = parseInt(prompt("đến :"));
+        var electSpace3 = parseInt(prompt("nhập giá trị bạn muốn đoán :"));
+        let random = Math.floor(Math.random() * (electSpace2 - electSpace1) + electSpace1);
         let j = 1;
-        for (i=0;i<1;) {
-            if (Random === ElectSpace3){
+        let i = 0;
+        while (i<1) {
+            if (random === electSpace3){
                 alert("Bạn đã đoán đúng");
                 i++;
             } else {
-                var ElectSpace3 = parseInt(prompt("nhập lại giá trị bạn muốn đoán :"));
+                var electSpace3 = parseInt(prompt("nhập lại giá trị bạn muốn đoán :"));
                 j++;
             }
-            if (Random === ElectSpace3 && j >1 ) {
+            if (random === electSpace3 && j >1 ) {
                 alert("Bạn đã đoán đúng");
                 i++;
             } else if (j === 3 ) {

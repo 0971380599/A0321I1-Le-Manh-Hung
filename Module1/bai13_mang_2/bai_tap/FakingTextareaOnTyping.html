@@ -7,10 +7,27 @@
 <body>
     <center>
         <h1> Type anthing slowly</h1>
-        <textarea id="text" style="position:absolute; width: 400px; height: 250px" ></textarea>
+        <textarea id="text" style=" width: 400px; height: 250px" onkeydown="fake()" ></textarea>
     </center>
     <script>
-        let array = []
+        let str = "";
+        let array = ["","x","i","n"," ","c","h","à","o"," ","b","ạ","n"," ","đ","ã"," ","đ","ế","n"," ","v","ớ","i"," ","c","o","d","e"," ","g","y","m","!","!"];
+        function fake() {
+            let text = document.getElementById("text").value;
+            let j = text.length;
+            if (j > 0) {
+                for (let i = 1; i <= j; i++) {
+                    str = str + array[i];
+                    if (i === 34) {
+                        document.getElementById("text").value = "";
+                        str = "";
+                    }
+                }
+            }
+            document.getElementById("text").value = str;
+            str = "";
+            setTimeout("fake()", 1);
+        }
     </script>
 </body>
 </html>
