@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array =  Array();
+        let array1 = [];
+        array.length = parseInt(prompt("nhập vào số phần tử các số nguyên trong mảng : "));
+        for (i=0; i < array.length; i++) {
+            array[i] = parseInt(prompt("array[" + i + "]="));
+            if (array[i]<0) {
+                array1.push(array[i])
+            }
+        }
+        document.write("trong mảng vừa nhập có " +array1.length + " số nguyên âm")
+    </script>
+</body>
+</html>

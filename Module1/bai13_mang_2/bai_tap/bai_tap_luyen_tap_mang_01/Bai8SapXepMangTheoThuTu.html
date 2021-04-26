@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array =  Array();
+    array.length = parseInt(prompt("nhập vào số phần tử các số nguyên trong mảng : "));
+    for (i=0; i < array.length; i++) {
+        array[i] = parseInt(prompt("array[" + i + "]="));
+    }
+    array.sort(function (a, b) {
+        return b-a
+    });
+    document.write(array)
+</script>
+</body>
+</html>

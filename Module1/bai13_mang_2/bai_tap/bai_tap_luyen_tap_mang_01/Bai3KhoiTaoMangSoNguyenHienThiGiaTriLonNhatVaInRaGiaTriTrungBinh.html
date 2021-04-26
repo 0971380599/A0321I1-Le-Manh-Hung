@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let array =[20,10,3,6,5,15,40,15];
+        document.write(array + "<br>");
+        let sum = 0;
+        let max = 0;
+        let average = 0;
+        for (let i=0; i < array.length; i++) {
+            sum += array[i];
+            if ( array[i] > max ) {
+                max = array[i];
+            }
+        }
+        document.write(max + " là giá trị lớn nhất trong mảng." + "<br>");
+        average = sum / (array.length);
+        document.write(average + " là giá trị trung bình của các phần tử trong mảng." + "<br>");
+    </script>
+</body>
+</html>

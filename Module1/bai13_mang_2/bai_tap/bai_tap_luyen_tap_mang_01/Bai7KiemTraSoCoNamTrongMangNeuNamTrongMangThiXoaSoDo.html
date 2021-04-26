@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array =[20,10,3,6,5,15,40];
+    let v = parseInt(prompt("nhập vào số V : "));
+    for (let i=0 ; i<array.length ; i++) {
+        if (array[i] === v) {
+            alert("V is in the array");
+            array.splice(i,1);
+            break;
+        } else if (i === (array.length - 1)) {
+            alert("V is not in the array")
+        }
+    }
+    document.write(array)
+</script>
+</body>
+</html>
