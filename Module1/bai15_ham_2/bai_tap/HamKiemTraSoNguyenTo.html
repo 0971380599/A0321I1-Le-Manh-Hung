@@ -7,27 +7,19 @@
 <body>
 <script>
     function checkPrime(N) {
-        if (N===2) {
-            return true;
-        } else if (N===3){
-            return true;
-        } else if (N===5) {
-            return true;
-
-        } else if (N === 7) {
-            return true;
-        } else {
-            if(N%2!==0 && N%3!==0 && N%5!==0 && N%7!==0) {
-                return true;
-            } else  return false;
+        for (let i = 2; i < N; i++) {
+            if (N % i === 0) {
+                return false;
+            }
         }
+        return true;
     }
+
     let prime = parseInt(prompt("Nhập số cần kiếm tra có phải là số nguyên tố : "));
     let check = checkPrime(prime);
-    if (check){
+    if (check) {
         alert(prime + " là số nguyên tố");
     } else alert(prime + " không là số nguyên tố");
-
 </script>
 </body>
 </html>

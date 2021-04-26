@@ -6,18 +6,14 @@
 </head>
 <body>
 <script>
-    let num=window.prompt("Nhập vào 1 số có nhiều chữ số: ");
-    let str = num.toString();
+    let num1 = window.prompt("Nhập vào 1 số có nhiều chữ số: ");
+    let str = num1.toString();
     let result = [str[0]];
 
-    for(let x=1; x<str.length; x++)
-    {
-        if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
-        {
+    for (let x = 1; x < str.length; x++) {
+        if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
             result.push('-', str[x]);
-        }
-        else
-        {
+        } else {
             result.push(str[x]);
         }
     }

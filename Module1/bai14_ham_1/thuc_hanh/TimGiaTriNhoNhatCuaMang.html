@@ -10,18 +10,20 @@
     let arr2 = [7, 12, 6, 9, 20, 56, 89];
     let arr3 = [];
     let arr4 = [0, 0, 0, 0, 0, 0];
+
     function searchMin(arr) {
-        if (arr.length<1){
+        if (arr.length < 1) {
             return "Mảng rỗng.";
         }
-            let min = arr[0];
-        for (let i =1; i < arr.length; i++) {
-            if (arr[i]<min) {
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i];
             }
         }
         return min;
     }
+
     let minarr1 = searchMin(arr1);
     alert(minarr1);
     let minarr2 = searchMin(arr2);
