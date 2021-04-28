@@ -19,13 +19,9 @@
                 alert("Bạn đã đoán đúng");
                 i++;
             } else {
-                var electSpace3 = parseInt(prompt("nhập lại giá trị bạn muốn đoán :"));
+                electSpace3 = parseInt(prompt("nhập lại giá trị bạn muốn đoán :"));
                 j++;
-            }
-            if (random === electSpace3 && j >1 ) {
-                alert("Bạn đã đoán đúng");
-                i++;
-            } else if (j === 3 ) {
+            }if (j === 3 ) {
                 alert("bạn đã thua");
                 i++;
             }

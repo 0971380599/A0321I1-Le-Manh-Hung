@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    function footToMeter(foot) {
+        meter = 0.305 * foot;
+        return meter;
+    }
+    function meterToFoot(meter) {
+        foot = 3.279 * meter;
+        return foot;
+    }
+    let value = parseFloat(prompt("Nhập giá trị cần đổi:"));
+    alert("giá trị chuyển đổi từ foot sang meter là :" + footToMeter(value));
+    alert("giá trị chuyển đổi từ meter sang foot là :" + meterToFoot(value));
+</script>
 </body>
-</html>
+</html
