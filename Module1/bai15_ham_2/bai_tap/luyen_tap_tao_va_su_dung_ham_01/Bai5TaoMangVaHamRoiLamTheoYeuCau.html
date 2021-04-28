@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let array1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let array2 = ["Ursa Minor", "arurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function charFunction(char) {
+            for (let i=0; i<array1.length; i++)
+                if (array1[i]===char) {
+                    return array2[i];
+                }
+                else if (i ===(array1.length-1)) {
+                    return "không tìm thấy ngôi sao nào"
+                }
+        }
+    </script>
+</head>
+<body>
+<script>
+    let name = prompt("Nhập vào tên ngôi sao :");
+    value = charFunction(name);
+    alert(value);
+</script>
+</body>
+</html>

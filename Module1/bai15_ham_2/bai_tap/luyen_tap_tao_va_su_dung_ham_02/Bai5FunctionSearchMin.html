@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function searchMin(number1, number2, number3) {
+            if (number1 < number2 && number1 < number3) {
+                return number1;
+            } else if (number2 > number3) {
+                return number2;
+            } else return number3;
+        }
+    </script>
+</head>
+<body>
+<script>
+    let number1 = parseInt(prompt("Nhập số thứ nhất :"));
+    let number2 = parseInt(prompt("Nhập số thứ hai :"));
+    let number3 = parseInt(prompt("Nhập số thứ ba :"));
+    alert( "số bé nhất là :" + searchMin(number1,number2,number3));
+</script>
+</body>
+</html>
