@@ -6,10 +6,18 @@
 </head>
 <body>
 <script>
-    let array = ["a20", 10, 3, 6, 5, 15, 40];
+    let array = ["một",20, 10, 3, 6, 5, 15, 40];
+    let n = 0;
     for (var i in array) {
-        alert(array[i])
+        if (!isNaN(array[i])) {
+            n++;
+            // for (var j in array) {
+            //     if (array[j] !== isNaN()) {
+            //         n++;
+            //     }
+        }
     }
+    alert(n)
 </script>
 </body>
 </html>

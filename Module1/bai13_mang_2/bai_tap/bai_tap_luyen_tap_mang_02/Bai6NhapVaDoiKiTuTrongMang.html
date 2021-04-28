@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let char = prompt("Nhập vào mảng kí tự : ");
+    let array = [];
+    for (var i of char) {
+         array.push(i);
+    }
+    for (j=0; j<array.length; j++) {
+        if (array[j] === "-") {
+            array[j] = "_";
+        }
+    }
+    document.write(array.join(""));
+</script>
+</body>
+</html>
