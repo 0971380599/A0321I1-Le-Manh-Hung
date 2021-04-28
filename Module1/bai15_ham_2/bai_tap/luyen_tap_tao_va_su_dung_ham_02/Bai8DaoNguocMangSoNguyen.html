@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function change(number) {
+            array = [];
+            for (i = 0; i < number; i++) {
+                array[i] = parseInt(prompt("nhập array[" + i + "]"));
+            }
+            return array.reverse();
+        }
+    </script>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("số phần tử trong mảng :"));
+    document.write(change(number));
+</script>
+</body>
+</html>
