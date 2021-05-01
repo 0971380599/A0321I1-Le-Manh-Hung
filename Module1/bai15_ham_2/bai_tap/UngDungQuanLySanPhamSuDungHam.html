@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 400px;
+            height: 30px;
+        }
+
+        button {
+            background-color: forestgreen;
+            color: #dddddd;
+            width: 50px;
+            height: 35px;
+        }
+
+        p {
+            margin-left: 30px;
+        }
+    </style>
+    <script>
+        let productList = [];
+
+        function input() {
+            if (document.getElementById("new").value === "") {
+            } else {
+                productList.push(document.getElementById("new").value);
+            }
+            document.getElementById("new").value = onreset;
+            diplay()
+        }
+
+        function diplay() {
+            let sout = "";
+            sout = "<table border='0' width='700' cellspacing='0' cellpadding='4'>";
+            sout = sout + "<tr>";
+            sout = sout + "<th>" + "STT" + "</th>";
+            sout = sout + "<th>" + "Product Name" + "</th>";
+            sout = sout + "<th>" + "Product Edit" + "</th>";
+            sout = sout + "<th>" + "Product Delete" + "</th>";
+            sout = sout + "</tr>";
+            for (let i = 0; i < productList.length; i++) {
+                sout = sout + "<tr>";
+                sout = sout + "<th>" + (i + 1) + "</th>";
+                sout = sout + "<th>" + productList[i] + "</th>";
+                sout = sout + "<th>" + "<button type='button'  onclick='editProduct("+i+")'> Edit </button>" + "</th>";
+                sout = sout + "<th>" + "<button type='button'  onclick='deleteProduct("+i+")'> delete </button>" + "</th>";
+                sout = sout + "</tr>";
+            }
+            document.getElementById("listProduct").innerHTML = sout;
+        }
+
+        function deleteProduct(a) {
+            productList.splice(a, 1);
+            document.getElementById("listProduct").innerHTML = " ";
+            diplay();
+        }
+
+        function editProduct(i) {
+            let change = prompt("Enter change product: ");
+            productList[i] = change;
+            document.getElementById("listProduct").innerHTML = " ";
+            diplay();
+        }
+    </script>
+</head>
+<body>
+<form>
+    <h3> Add New Product</h3>
+    <input id="new" name="newProduct" placeholder="New Product">
+    <button type="button" onclick="input()">Add</button>
+    <h3> Display All Product </h3>
+</form>
+<p id="listProduct"></p>
+<script>
+</script>
+</body>
+</html>

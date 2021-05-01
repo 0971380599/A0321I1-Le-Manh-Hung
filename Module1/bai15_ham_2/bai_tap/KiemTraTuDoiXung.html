@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome(s) {
+        let array = [];
+        let checker = true;
+        for (var w of s) {
+            array.push(w);
+        }
+        for (i=0; i<array.length/2; i++)
+            if (array[i]===array[array.length-i-1]) {
+                checker = true;
+            } else {
+                 return checker = false;
+            }
+        return checker = true;
+    }
+    let save = prompt("Nhập từ cần kiểm tra tính đối xứng: ");
+    document.write(isPalindrome(save));
+</script>
+</body>
+</html>
