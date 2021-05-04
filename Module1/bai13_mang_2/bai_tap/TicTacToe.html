@@ -54,11 +54,13 @@
             for (let j = 0; j < 10; j++) {
                 if ((board[i][j] === "x" && board[i + 1][j] === "x" && board[i + 2][j] === "x")
                     || (board[i][j] === "x" && board[i][j+1] === "x" && board[i][j+2] === "x")
-                    || (board[i][j] === "x" && board[i+1][j+1] === "x" && board[i+2][j+2] === "x")) {
+                    || (board[i][j] === "x" && board[i+1][j+1] === "x" && board[i+2][j+2] === "x")
+                    || (board[i][j] === "x" && board[i+1][j-1] === "x" && board[i+2][j-2] === "x")) {
                     alert("Người chơi X thắng")
                 } else if ((board[i][j] === "o" && board[i + 1][j] === "o" && board[i + 2][j] === "o")
                     || (board[i][j] === "o" && board[i][j+1] === "o" && board[i][j+2] === "o")
-                    || (board[i][j] === "o" && board[i+1][j+1] === "o" && board[i+2][j+2] === "o")) {
+                    || (board[i][j] === "o" && board[i+1][j+1] === "o" && board[i+2][j+2] === "o")
+                    || (board[i][j] === "o" && board[i+1][j-1] === "o" && board[i+2][j-2] === "o")) {
                     alert("Người chơi O thắng")
                 }
             }
