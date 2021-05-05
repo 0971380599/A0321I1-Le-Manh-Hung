@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (doC) {
+        this.doC = doC;
+        this.convertCToF = function () {
+            return 5 / 9 * doC + 32;
+        };
+        this.convertCToKevin = function () {
+            return doC + 275.15;
+        }
+    };
+    let inputC = parseFloat(prompt("nhập vào giá thị độ C :"));
+    let temperature = new Temperature(inputC);
+    alert("giá trị chuyển sang độ F: " + temperature.convertCToF());
+    alert("giá trị chuyển sang độ Kevin: " + temperature.convertCToKevin());
+</script>
+</body>
+</html>

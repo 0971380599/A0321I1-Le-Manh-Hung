@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="rectangle" style="width: 600px; height: 400px;"></canvas>
+<script>
+    let Rectangle = function (length,width) {
+        this.length = length;
+        this.width = width;
+        this.acreage = function () {
+           return length * width;
+        };
+        this.perimeter = function () {
+            return (length + width)*2;
+        };
+        this.diplay = function () {
+            var ctx = document.getElementById("rectangle").getContext("2d");
+            ctx.strokeRect(10,10,length,width);
+        };
+    };
+    let rectangle = new Rectangle(20,10);
+    document.write("<br>" + "diện tích hình chữ nhật là: " + rectangle.acreage() + "<br>");
+    document.write("chu vi hình chữ nhật là : " + rectangle.perimeter());
+    rectangle.diplay();
+</script>
+</body>
+</html>
