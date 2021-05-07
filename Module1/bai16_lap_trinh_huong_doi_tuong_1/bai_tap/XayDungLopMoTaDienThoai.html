@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let Mobile = function () {
+            let battery = 100;
+            let messaing = "";
+            let mesSendTo = "";
+            let mesSent = "";
+            let checkonoff = true;
+            this.checkOnOff = function () {
+                if (checkonoff === true) {
+                } else return alert("Điện Thoại đang tắt");
+                battery--;
+            };
+            this.onPhone = function () {
+                this.checkOnOff();
+                checkonoff = true;
+                battery--;
+            };
+            this.offPhone = function () {
+                this.checkOnOff();
+                checkonoff = false;
+                battery--;
+            };
+            this.charge = function () {
+                this.checkOnOff();
+                battery = 100;
+            };
+            this.texting = function () {
+                this.checkOnOff();
+                messaing = prompt("nhập nội dung tin nhắn soạn thảo");
+                battery--;
+            };
+            this.takeMessage = function () {
+                this.checkOnOff();
+                battery--;
+            };
+            this.sendMessage = function () {
+                this.checkOnOff();
+                battery--;
+            };
+            this.seeSendTo = function () {
+                this.checkOnOff();
+                battery--;
+            };
+            this.seeSent = function () {
+                this.checkOnOff();
+                battery--;
+            };
+
+        }
+    </script>
+</head>
+<body>
+<label></label>
+<input id="nokia" width="50px" height="20px">
+<button type="button" onclick="">Gửi tin nhắn</button>
+</body>
+</html>
