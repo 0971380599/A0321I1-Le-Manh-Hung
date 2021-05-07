@@ -3,60 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+        };
+    </style>
     <script>
         let Mobile = function () {
             let battery = 100;
             let messaing = "";
-            let mesSendTo = "";
-            let mesSent = "";
+            let mesSendTo = [];
+            let mesSent = [];
             let checkonoff = true;
             this.checkOnOff = function () {
-                if (checkonoff === true) {
+                if (checkonoff === true){
+                    return alert("Điện Thoại đang bật");
                 } else return alert("Điện Thoại đang tắt");
-                battery--;
             };
             this.onPhone = function () {
-                this.checkOnOff();
                 checkonoff = true;
+                alert("điện thoại bạn đã được bật");
                 battery--;
             };
             this.offPhone = function () {
-                this.checkOnOff();
                 checkonoff = false;
+                alert("điện thoại bạn đã tắt ");
                 battery--;
             };
             this.charge = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
                 battery = 100;
             };
             this.texting = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
                 messaing = prompt("nhập nội dung tin nhắn soạn thảo");
                 battery--;
             };
+            //nhận tin nhắn
             this.takeMessage = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
+                alert(mesSendTo[mesSendTo.length-1]);
                 battery--;
             };
+            //gửi tin nhắn
             this.sendMessage = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
+                alert("tin nhắn " + messaing+ " đã được gửi đi");
+                mesSent.push(messaing);
+                mesSendTo.push(messaing);
+                messaing = "";
                 battery--;
             };
+            // xem tin trong hộp thư gửi đến
             this.seeSendTo = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
+                let i = parseInt(prompt("nhập thứ tự tin nhắn cần xem"))-1;
+                alert(mesSendTo[i]);
                 battery--;
             };
+            // xem tin đã gửi
             this.seeSent = function () {
-                this.checkOnOff();
+                if (checkonoff === false){
+                    return alert("Điện Thoại đang tắt");
+                }
+                let i = parseInt(prompt("nhập thứ tự tin nhắn cần xem"))-1;
+                alert(mesSent[i]);
                 battery--;
             };
 
-        }
+        };
+        let mobile = new Mobile()
     </script>
 </head>
 <body>
 <label></label>
-<input id="nokia" width="50px" height="20px">
-<button type="button" onclick="">Gửi tin nhắn</button>
+<button type="button" onclick="mobile.checkOnOff()">Kiểm tra trạng thái điện thoại</button>
+<button type="button" onclick="mobile.onPhone()">Bật điện thoại</button>
+<button type="button" onclick="mobile.offPhone()">Tắt điện thoại</button>
+<button type="button" onclick="mobile.texting()">Soạn Tin nhắn</button>
+<button type="button" onclick="mobile.takeMessage()">Xem tin nhắn nhận được</button>
+<button type="button" onclick="mobile.sendMessage()">Gửi tin nhắn</button>
+<button type="button" onclick="mobile.seeSendTo()">xem tin trong hộp thư gửi đến</button>
+<button type="button" onclick="mobile.seeSent()">xem tin đã gửi</button>
 </body>
 </html>
