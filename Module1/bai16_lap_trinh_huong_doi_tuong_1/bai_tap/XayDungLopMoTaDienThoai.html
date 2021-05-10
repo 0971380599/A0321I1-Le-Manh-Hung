@@ -14,7 +14,7 @@
         };
     </style>
     <script>
-        let Mobile = function () {
+        function Mobile() {
             let battery = 100;
             let messaing = "";
             let mesSendTo = [];
@@ -22,8 +22,8 @@
             let checkonoff = true;
             this.checkOnOff = function () {
                 if (checkonoff === true){
-                    return alert("Điện Thoại đang bật");
-                } else return alert("Điện Thoại đang tắt");
+                    return alert("Điện Thoại đang bật và còn " + battery + " pin");
+                } else return alert("Điện Thoại đang tắt và còn " + battery + " pin");
             };
             this.onPhone = function () {
                 checkonoff = true;
@@ -33,7 +33,6 @@
             this.offPhone = function () {
                 checkonoff = false;
                 alert("điện thoại bạn đã tắt ");
-                battery--;
             };
             this.charge = function () {
                 if (checkonoff === false){
@@ -86,8 +85,8 @@
                 battery--;
             };
 
-        };
-        let mobile = new Mobile()
+        }
+        let mobile =new Mobile()
     </script>
 </head>
 <body>
