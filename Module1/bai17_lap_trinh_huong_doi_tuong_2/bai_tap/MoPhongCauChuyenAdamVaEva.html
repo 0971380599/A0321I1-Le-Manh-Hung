@@ -6,15 +6,62 @@
 </head>
 <body>
 <script>
-    let Apple = function(weight) {
-        this.weight = weight;
-        this.apple = function() {
-            this.weight = 10;
+    let Apple = function () {
+        this.setWeightapple = function (weightapple) {
+            this.weightapple = weightapple;
         };
-        this.decrease = function() {
-            return this.weight--;
+        this.getWeightApple = function () {
+            return this.weightapple;
+        };
+        this.decrease = function () {
+            if (this.weightapple > 0)
+                return this.weightapple --;
+        };
+        this.isEmpty = function () {
+            if (this.weightapple === 0) {
+                alert("quả táo đã hết");
+                return false
+            }
+            return true;
+        };
+    };
+    let Human = function (name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.getWeightApple = function (apple) {
+            this.apple = apple;
+        };
+        this.getWeight = function () {
+            return this.weight
+        };
+        this.getAppleInf = function () {
+            return this.apple.getWeightApple();
+        };
+        this.checkApple = function () {
+            return this.apple.isEmpty();
+        };
+        this.eat = function () {
+            this.apple.decrease();
+            this.weight++;
+        };
+        this.say = function () {
+            document.write(this.name + " nói: tới lượt tôi ăn táo <br>")
         }
-        this.
+    };
+    let adam = new Human("adam", "male", 45);
+    let eva = new Human("eva", "Femal", 40);
+    let apple = new Apple();
+    apple.setWeightapple(10);
+    adam.getWeightApple(apple);
+    eva.getWeightApple(apple);
+    while (adam.checkApple()) {
+        eva.eat();
+        eva.say();
+        document.write('Weight of Eva: ' + eva.getWeight() + '.' + ' The remain of the apple: ' + eva.getAppleInf() + '<br>');
+        adam.eat();
+        adam.say();
+        document.write('Weight of Eva: ' + adam.getWeight() + '.' + ' The remain of the apple: ' + adam.getAppleInf() + '<br>');
     }
 </script>
 </body>
