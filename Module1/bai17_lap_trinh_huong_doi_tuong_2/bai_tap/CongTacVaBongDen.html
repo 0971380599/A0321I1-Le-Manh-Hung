@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="diplay"></div>
+<script>
+    let SwitchButton = function () {
+        this.switchButton = function () {
+            let Off = "<button type='button' onclick='switchOff();'> Off </button>";
+            let On = "<button type='button' onclick='switchOn();'> On </button>";
+            document.getElementById("diplay").innerHTML = Off + On;
+        };
+        this.connectToLamp = function (electricLamp) {
+            return this.lamp = electricLamp;
+        };
+        this.switchOff = function () {
+            return this.lamp.turnOff();
+        };
+        this.switchOn = function () {
+            return  this.lamp.turnOn();
+        }
+    };
+    let ElectricLamp = function (status) {
+        this.turnOff = function () {
+            alert("đèn đã tắt");
+            return this.status = false;
+        };
+        this.turnOn = function () {
+            alert("đèn đã bật");
+            return this.status = true;
+        }
+    };
+    let deskLamp = new ElectricLamp(true);
+    let switchbutton = new SwitchButton();
+    switchbutton.connectToLamp(deskLamp);
+    switchbutton.switchButton();
+    function switchOff() {
+        switchbutton.switchOff();
+    }
+    function switchOn() {
+        switchbutton.switchOn();
+    }
+</script>
+</body>
+</html>
