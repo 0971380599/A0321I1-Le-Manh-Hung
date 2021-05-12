@@ -5,18 +5,19 @@
     <title>Title</title>
     <script>
         function change(number1,number2) {
-            let array = [];
-            array[0] = number1;
-            array[1] = number2;
-            return array.reverse();
+           let sum = [];
+           sum[0] = number1[0];
+           number1[0] = number2[0];
+           number2[0] = sum[0];
         }
     </script>
 </head>
 <body>
 <script>
-    let number1 = prompt("nhập number 1:");
-    let number2 = prompt("nhập number 2:");
-    document.write(change(number1,number2))
+    let number1 = [prompt("nhập number 1: ")];
+    let number2 = [prompt("nhập number 2: ")];
+    change(number1,number2);
+    document.write( "number 1 = " + number1 + ", number 2 = " + number2);
 </script>
 </body>
 </html>

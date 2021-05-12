@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Rat = function (name, weightRat, speedRat, statusRat) {
+        this.name = name;
+        this.weightRat = weightRat;
+        this.speedRat = speedRat;
+        this.statusRat = statusRat;
+        this.cry = function () {
+            document.write("chuột kêu chít chít <br>")
+        };
+        this.status = function () {
+            if (this.statusRat === true) {
+              document.write("chuột vẫn còn sống <br>")
+            }
+            if (this.statusRat === false) {
+                document.write("chuột đã chết <br>")
+            }
+        };
+        this.setWeightRat = function () {
+            return this.weightRat;
+        };
+        this.setSpeedRat = function () {
+            return this.speedRat;
+        };
+    };
+    let Cat = function (name, weightCat, speedCat) {
+        this.nameCat = name;
+        this.weightCat = weightCat;
+        this.speedCat = speedCat;
+        this.cry = function () {
+            document.write("mèo kêu meo meo <br>")
+        };
+        this.setSpeedCat = function () {
+            return this.speedCat;
+        };
+        this.setWeightCat = function () {
+            return this.weightCat;
+        };
+        this.getCatInfo = function (nameRat) {
+            return this.nameRat = nameRat
+        };
+        this.catchMause = function () {
+            if (this.speedCat > this.nameRat.speedRat) {
+                document.write("mèo đã đắt được chuột " + this.nameRat.name + "<br>");
+            }
+            else document.write("mèo chạy chậm hơn nên không bắt được chuột " + this.nameRat.name + "<br>");
+        };
+        this.eatMause = function () {
+            if (this.nameRat.statusRat === true && this.speedCat > this.nameRat.speedRat) {
+                document.write("mèo đã ăn thịt chuột " + this.nameRat.name + "<br>");
+                return  this.weightCat += this.nameRat.weightRat;
+            } else if (this.nameRat.statusRat === true && this.speedCat < this.nameRat.speedRat) {
+                document.write("mèo không ăn được vì không bắt được chuột " + this.nameRat.name + "<br>");
+            }
+            else document.write("chuột " + this.name + " đã chết nên mèo không ăn thịt" + "<br>");
+
+        };
+    };
+    let jerry = new Rat("Jerry", 2, 5, true);
+    document.write("tốc độ của chuột " + jerry.name + " là : " + jerry.setSpeedRat() + "<br>");
+    jerry.status();
+    jerry.cry();
+    let micky = new Rat("Micky", 1, 8, true);
+    document.write("tốc độ của chuột " + micky.name + " là : " + jerry.setSpeedRat() + "<br>");
+    micky.status();
+    micky.cry();
+    let tom = new Cat("Tom", 10, 7);
+    document.write("tốc độ của mèo " + tom.nameCat + " là : " + tom.setSpeedCat() + "<br>");
+    tom.cry();
+    tom.getCatInfo(jerry);
+    tom.catchMause();
+    tom.eatMause();
+    tom.getCatInfo(micky);
+    tom.catchMause();
+    tom.eatMause();
+    document.write("khối lượng của mèo giờ là :" + tom.setWeightCat());
+</script>
+</body>
+</html>
