@@ -36,6 +36,23 @@ function Hero(image, top, left, size, speed) {
         this.top += this.speed;
         console.log('ok: ' + this.top);
     };
+
+    this.startLeft = function () {
+        this.moveLeft();
+        document.getElementById('game').innerHTML = this.getHeroElement();
+    };
+    this.startRight = function () {
+        this.moveRight();
+        document.getElementById('game').innerHTML = this.getHeroElement();
+    };
+    this.startUp = function () {
+        this.moveUp();
+        document.getElementById('game').innerHTML = this.getHeroElement();
+    };
+    this.startDown = function () {
+        this.moveDown();
+        document.getElementById('game').innerHTML = this.getHeroElement();
+    };
 }
 
 let speed = parseInt(prompt("nhập tốc độ muốn đi :"));
@@ -45,41 +62,18 @@ document.getElementById('game').innerHTML = hero.getHeroElement();
 function moveSelection(evt) {
     switch (evt.keyCode) {
         case 37:
-            startLeft();
+            hero.startLeft();
             break;
         case 39:
-            startRight();
+            hero.startRight();
             break;
         case 38:
-            startUp();
+            hero.startUp();
             break;
         case 40:
-            startDown();
+            hero.startDown();
             break;
     }
-}
-
-function startLeft() {
-    clearTimeout();
-    hero.moveLeft();
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-}
-
-function startRight() {
-    clearTimeout();
-    hero.moveRight();
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-}
-
-function startUp() {
-    hero.moveUp();
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-}
-
-function startDown() {
-    hero.moveDown();
-    document.getElementById('game').innerHTML = hero.getHeroElement();
-
 }
 
 function docReady() {
