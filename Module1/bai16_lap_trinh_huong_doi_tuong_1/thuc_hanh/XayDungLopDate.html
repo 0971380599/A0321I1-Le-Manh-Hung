@@ -6,48 +6,51 @@
 </head>
 <body>
 <script>
-    let MyDate = function(day, month, year) {
+    class MyDate {
+        constructor(day, month, year) {
 
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.getDay = function() {
-            return this.day;
-        };
-        this.getMonth = function() {
-            return this.month;
-        };
-        this.getYear = function() {
-            return this.year;
-        };
-        this.setDay = function(day) {
-            this.day  = day;
-        };
-        this.setMonth = function(month) {
-            this.month  = month;
-        };
-        this.setYear = function(year) {
-            this.year  = year;
-        };
-        this.getDate = function (day,month,year) {
             this.day = day;
             this.month = month;
             this.year = year;
-        };
-        this.toString = function () {
-            let day = date.getDay();
-
-            let month = date.getMonth();
-
-            let year = date.getYear();
-            alert(day + "/" + month + "/" + year);
         }
-    };
-    let date = new MyDate();
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+            setDay(day) {
+                this.day = day;
+            }
+            setMonth(month) {
+                this.month = month;
+            }
+            setYear(year) {
+                this.year = year;
+            }
+            getDate(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            toString() {
+                let day = this.getDay();
+
+                let month = this.getMonth();
+
+                let year = this.getYear();
+                alert(day + "/" + month + "/" + year);
+            }
+    }
+
+    let date = new MyDate(27,5,2021);
     date.setDay(10);
     date.setMonth(10);
     date.setYear(2019);
-    date.getDate(27,7,2020);
+    date.getDate(27, 7, 2020);
     date.toString();
 </script>
 </body>
