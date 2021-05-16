@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let characters = prompt("nhập kí tự cần kiểm tra");
+    let array = ['u','e','o','a','i','U','E','O','A','I'];
+    for (let i= 0; i<array.length; i++) {
+        if (characters === array[i]) {
+            check = true;
+            break;
+        }
+    }
+    if (check === true) {
+        alert("Từ nhập vào là nguyên âm");
+    } else         alert("Từ nhập vào là phụ âm");
+</script>
+</body>
+</html>

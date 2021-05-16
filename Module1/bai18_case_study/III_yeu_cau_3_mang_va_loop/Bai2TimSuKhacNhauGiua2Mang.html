@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger;
+    let numberA = parseInt(prompt("nhập số phần tử trong mảng A: "));
+    let a = [];
+    for (let i = 0; i < numberA; i++) {
+        a[i] = parseInt(prompt("a[" + i + "] = "));
+    }
+    let numberB = parseInt(prompt("nhập số phần tử trong mảng B: "));
+    let b = [];
+    for (let i = 0; i < numberB; i++) {
+        b[i] = parseInt(prompt("b[" + i + "] = "));
+    }
+    let c = [];
+    for (let i of b) {
+        let check = false;
+        for (let j of a) {
+          if (i === j) {
+              check = true
+          }
+        }
+        if (check === false ) {
+            c.push(i);
+        }
+    }
+    for (let i = 0; i < c.length; i++) {
+        let check = false;
+        for (let j = 0; j < c.length; j++) {
+            if (c[i]===c[j] && i !== j) {
+                check = true;
+            }
+        }
+        if (check === true) {
+            c.splice(i,1);
+        }
+    }
+    c.sort(function (a,b) {
+        return a-b;
+    });
+    document.write("missingValue(A, B) = " + c)
+</script>
+</body>
+</html>

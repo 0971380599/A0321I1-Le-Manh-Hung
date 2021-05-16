@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = parseInt(prompt("Nhập lương nhân viên nhận được"));
+    let tax = 0;
+    let salaryReal = 0;
+    if (salary > 15000000) {
+        tax = salary * 0.2;
+        salaryReal = salary - tax;
+        alert("thuế thu nhập là " + tax);
+        alert("lương ròng nhân viên nhận được " + salaryReal);
+    } else if (salary <= 15000000 && salary >= 7000000) {
+        tax = salary * 0.1;
+        salaryReal = salary - tax;
+        alert("thuế thu nhập là " + tax);
+        alert("lương ròng nhân viên nhận được " + salaryReal);
+    } else if (salary < 7000000 && salary > 0) {
+        tax = salary * 0.05;
+        salaryReal = salary - tax;
+        alert("thuế thu nhập là " + tax);
+        alert("lương ròng nhân viên nhận được " + salaryReal);
+    } else alert("nhập sai vui lòng nhập lại")
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("nhập số phần tử trong mảng a: "));
+    let a = [];
+    for (let i = 0; i < number; i++) {
+        a[i] = parseInt(prompt("a[" + i + "] = "));
+    }
+    document.write(a +"<br>");
+    let b = [];
+    for (let j = 0; j < number; j++) {
+        let c = 0;
+        for (let k = 0; k <= j; k++) {
+            c += a[k];
+        }
+        b[j]= c;
+    }
+    document.write(b)
+</script>
+</body>
+</html>

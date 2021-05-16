@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let highTriangle = parseInt(prompt("Nhập chiều cao :"));
+    for (let i = 0; i < highTriangle; i++) {
+        document.write("<br>");
+        for (let j = 0; j <= i; j++) {
+            if (i === 0 || i === (highTriangle-1)) {
+                document.write("*");
+            } else {
+                if (j === 0 || j === i) {
+                    document.write("*");
+                } else {
+                    document.write("&ensp;");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
