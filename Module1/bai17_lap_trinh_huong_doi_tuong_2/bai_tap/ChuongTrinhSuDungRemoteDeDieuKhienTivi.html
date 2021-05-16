@@ -5,6 +5,115 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
 
+        getCode() {
+            return this.code;
+        }
+
+        setCode(code) {
+            this.code = code;
+            return this.tivi.remoteChannels();
+        }
+
+        remoteInfo(tivi) {
+            return this.tivi = tivi
+        }
+
+        volumeControlUp() {
+            return this.tivi.remoteVolumeUp();
+        }
+
+        volumeControlDown() {
+            return this.tivi.remoteVolumeDown();
+        }
+
+        remoteOnTivi() {
+            this.tivi.onTivi();
+        }
+
+        remoteOffTivi() {
+            this.tivi.offTivi();
+        }
+    }
+
+    class TiVi {
+        constructor(channels, volume, status) {
+            this.channels = channels;
+            this.valume = volume;
+            this.status = status;
+        }
+
+        setChannels(code) {
+            if (this.status === false) {
+                document.write("Tivi đang tắt" + "<br>")
+            }
+            document.write("chuyển tới kênh " + code + "<br>");
+            return this.channels = code;
+        }
+
+        onTivi() {
+            document.write("Tivi đã được bật" + "<br>");
+            return this.status = true;
+        }
+
+        offTivi() {
+            document.write("Tivi đã được tắt" + "<br>");
+            return this.status = false;
+        }
+
+        statusOnOff() {
+            if (this.status === true) {
+                document.write("Tivi đang bật" + "<br>")
+            } else document.write("Tivi đang tắt" + "<br>");
+        }
+
+        getchannel(code) {
+            return this.channels = code;
+        }
+
+        remoteInfo(remote) {
+            return this.remote = remote
+        }
+
+        remoteChannels() {
+            if (this.status === false) {
+                document.write("Tivi đang tắt" + "<br>")
+            }
+            return document.write("chuyển tới kênh " + this.remote.code + "<br>");
+        }
+
+        remoteVolumeUp() {
+            if (this.status === false) {
+                document.write("Tivi đang tắt" + "<br>")
+            }
+            this.valume++;
+            return document.write("valume + 1 =" + this.valume+ "<br>")
+        }
+
+        remoteVolumeDown() {
+            if (this.status === false) {
+                document.write("Tivi đang tắt" + "<br>")
+            }
+            this.valume--;
+            return document.write("valume - 1 =" + this.valume+ "<br>")
+        }
+    }
+
+    let tiVi = new TiVi(5, 10, false);
+    let remote = new Remote(5);
+    tiVi.remoteInfo(remote);
+    remote.remoteInfo(tiVi);
+    tiVi.onTivi();
+    tiVi.setChannels(7);
+    remote.setCode(3);
+    remote.volumeControlUp();
+    remote.volumeControlUp();
+    remote.remoteOffTivi();
+</script>
 </body>
 </html>
