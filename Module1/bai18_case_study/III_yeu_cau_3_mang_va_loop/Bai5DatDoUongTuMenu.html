@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th></th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <button type="button" value="1" onclick="more1()">1</button>
+            <span>Cafe</span></td>
+        <td>
+            <button type="button" value="2" onclick="more2()">2</button>
+            <span>Cam vắt</span></td>
+        <td>
+            <button type="button" value="3" onclick="more3()">3</button>
+            <span>Nước ép cà rốt</span></td>
+        <td>
+            <button type="button" value="4" onclick="more4()">4</button>
+            <span>Nước ép cà chua</span></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" value="5" onclick="more5()">5</button>
+            <span>Nước lọc</span></td>
+        <td>
+            <button type="button" value="6" onclick="more6()">6</button>
+            <span>Nước dừa</span></td>
+        <td>
+            <button type="button" value="7" onclick="exit()">7</button>
+            <span>Thoát gọi món</span></td>
+    </tr>
+</table>
+<div id="diplay"></div>
+<script>
+    let array = [];
+
+    function more1() {
+        array.push("Cafe: 15000");
+        diplay()
+    }
+
+    function more2() {
+        array.push("Cam vắt: 20000");
+        diplay()
+    }
+
+    function more3() {
+        array.push("Nước ép cà rốt: 15000");
+        diplay()
+    }
+
+    function more4() {
+        array.push("Nước ép cà chua: 15000");
+        diplay()
+    }
+
+    function more5() {
+        array.push("Nước lọc: 10000");
+        diplay()
+    }
+
+    function more6() {
+        array.push("Nước dừa: 20000");
+        diplay()
+    }
+
+    function diplay() {
+        let sout = "<b>Danh sách món đã chọn</b>";
+        sout += "<table border='0' width='500' cellspacing='0' cellpadding='4'>";
+        sout += "<tr>";
+        sout += "<th> STT </th>";
+        sout += "<th> Tên mặt hàng và đơn giá </th>";
+        sout += "<th> Số lượng </th>";
+        sout += "</tr>";
+        for (let i = 0; i < array.length; i++) {
+            sout += "<tr>";
+            sout += "<th>" + (i + 1) + "</th>";
+            sout += "<th>" + array[i] + "</th>";
+            sout += "<th>" + "<input id='" + i + "' type='number' style='width: 30px'>" + "</th>";
+            sout += "</tr>";
+
+        }
+        document.getElementById("diplay").innerHTML = sout;
+    }
+
+    function exit() {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === "Cafe: 15000" || array[i] === "Nước ép cà rốt: 15000" || array[i] === "Nước ép cà chua: 15000") {
+                sum += 15000 * parseInt(document.getElementById("" + i + "").value)
+            } else if (array[i] === "Nước dừa: 20000" || array[i] === "Cam vắt: 20000") {
+                sum += 20000 * parseInt(document.getElementById("" + i + "").value)
+            } else sum += 10000 * parseInt(document.getElementById("" + i + "").value)
+        }
+        alert("số tiền cần phải thanh toán là :" + sum);
+    }
+</script>
+</body>
+</html>

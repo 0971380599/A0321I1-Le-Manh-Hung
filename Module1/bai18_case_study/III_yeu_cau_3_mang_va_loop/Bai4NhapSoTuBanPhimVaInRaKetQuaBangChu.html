@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhập số cần chuyển");
+    let number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",];
+    let char = ["một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "không"];
+    let value = "";
+    for (let j of input) {
+        for (let i = 0; i < number.length; i++) {
+            if (j === number[i]) {
+                value+= char[i] + " ";
+            }
+        }
+    }
+    alert(value)
+</script>
+</body>
+</html>

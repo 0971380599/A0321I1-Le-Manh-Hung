@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Số phân số cần nhập: "));
+    let numerators = [];
+    for (let i = 0; i < number; i++) {
+        numerators[i] = parseInt(prompt("a[" + i + "] = "));
+    }
+    let denominators = [];
+    for (let i = 0; i < number; i++) {
+        denominators[i] = parseInt(prompt("b[" + i + "] = "));
+    }
+    let max = 0;
+    for (let i = 0; i < number; i++) {
+        if (max < (numerators[i]/denominators[i])) {
+            max = Math.floor(numerators[i]/denominators[i]) + 1;
+        }
+    }
+    document.write(max)
+</script>
+</body>
+</html>
