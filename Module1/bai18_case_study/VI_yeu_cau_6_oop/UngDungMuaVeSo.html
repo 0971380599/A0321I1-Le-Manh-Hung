@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 37px;
+        }
+    </style>
+</head>
+<body>
+<h2> Xổ Số Mạnh Hùng</h2>
+<div id="diplay"></div>
+<script>
+    let inputDisplay = "<input type=\"number\" min=\"00\" max=\"99\" value=\"15\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"25\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"35\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"45\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"55\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"65\"><br><br>" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"10\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"20\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"30\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"40\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"50\">&ensp;" +
+        "<input type=\"number\" min=\"00\" max=\"99\"  value=\"60\"><br><br>" +
+        "<button type=\"button\" onclick=\"buy()\">Mua vé</button>&ensp;" +
+        "<button type=\"button\" onclick=\"checkValue();\">Xem kết quả</button>";
+    document.getElementById("diplay").innerHTML = inputDisplay;
+    let result = [];
+    let resultLottery = "";
+    let count = 0;
+    class Lottery {
+        constructor(amount) {
+            this.amount = amount;
+            this.consolationPrizes = "30.000.000đ";
+            this.theSecondPrize = "300.000.000đ";
+            this.firstPrize = "3.000.000.000đ";
+        }
+        getAmount(amount) {
+            return this.amount = amount;
+        }
+        inputLottery() {
+            alert("nhập 6 số của " + this.amount + " vé vào các ô trên màn hình");
+            inputDisplay = "";
+            for (let j = 0; j < this.amount; j++) {
+                inputDisplay += "vé" + j + ":";
+                for (let i = 0; i < 6; i++) {
+                    inputDisplay += "<select id='" + j + i + "'>";
+                    for (let k = 0; k < 100; k++) {
+                        inputDisplay += "<option  style='width: 45px'>" + k + "</option>"
+                    }
+                    inputDisplay += "</select>&ensp;";
+                }
+                inputDisplay += "<br><br>"
+            }
+            inputDisplay += "<button type=\"button\" onclick=\"buy()\">Mua vé</button>&ensp;" +
+                "<button type=\"button\" onclick=\"checkValue();\">Xem kết quả</button>";
+            document.getElementById("diplay").innerHTML = inputDisplay;
+        }
+
+        randomLottery() {
+            inputDisplay = " ";
+            for (let j = 0; j < this.amount; j++) {
+                inputDisplay += "vé" + j + ":";
+                for (let i = 0; i < 6; i++) {
+                    inputDisplay += "<button id='" + j + i + "' type=\"button\" style='width: 45px'>" + Math.floor(Math.random() * 99) + "</button>&ensp;"
+                }
+                inputDisplay += "<br><br>"
+            }
+            inputDisplay += "<button type=\"button\" onclick=\"buy()\">Mua vé</button>&ensp;" +
+                "<button type=\"button\" onclick=\"checkValue();\">Xem kết quả</button>";
+            document.getElementById("diplay").innerHTML = inputDisplay;
+        }
+
+        result() {
+            for (let i = 0; i < 6; i++) {
+                result[i] = Math.floor(Math.random() * 99);
+            }
+        }
+
+        compareResult(i) {
+            for (let j; j < i; j++) {
+                if (document.getElementById("" + j + "5").value == result[5]) {
+                    if (document.getElementById("" + j + "4").value == result[4]) {
+                        if (document.getElementById("" + j + "3").value == result[3]) {
+                            resultLottery = "bạn đạt giải khuyến khích";
+                            if (document.getElementById("" + j + "2").value == result[2]) {
+                                if (document.getElementById("" + j + "1").value == result[1]) {
+                                    resultLottery = "bạn đạt giải nhì";
+                                    if (document.getElementById("" + j + "0").value == result[0]) {
+                                        resultLottery = "bạn đạt giải nhất";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        prize() {
+            if (resultLottery === "bạn đạt giải khuyến khích") {
+                alert("bạn đạt giải khuyến khích với số tiền nhận được là" + this.consolationPrizes)
+            } else if (resultLottery === "bạn đạt giải nhì") {
+                alert("bạn đạt giải nhì với số tiền nhận được là" + this.theSecondPrize)
+            } else if (resultLottery === "bạn đạt giải nhất") {
+                alert("bạn đạt giải nhất với số tiền nhận được là" + this.firstPrize)
+            } else alert("chúc bạn may mắn lần sau");
+        }
+    }
+    let lottery = new Lottery();
+    function buy() {
+        let type = parseInt(prompt("bạn có 2 kiểu nhập \n 1.Bạn muốn tự chọn số \n 2.Hệ thống tự chọn random"));
+        if (type === 1) {
+            let amount = parseInt(prompt("nhập số xổ số muốn mua tối đa 4 vé"));
+            lottery.getAmount(amount);
+            count = amount;
+            if (amount < 5 && amount > 0) {
+                lottery.inputLottery();
+            } else {
+                alert("vui lòng nhập số trong vòng từ 1 đến 4");
+                buy()
+            }
+        } else if (type === 2) {
+            let amount = parseInt(prompt("nhập số xổ số muốn mua tối đa 4 vé"));
+            lottery.getAmount(amount);
+            count = amount;
+            if (amount < 5 && amount > 0) {
+                lottery.randomLottery();
+            } else {
+                alert("vui lòng nhập số trong vòng từ 1 đến 4");
+                buy()
+            }
+        } else {
+            alert("bạn đã nhập sai vui lòng nhập lại");
+            buy()
+        }
+    }
+    lottery.result();
+    alert(result);
+    function checkValue() {
+        // lottery.result();
+        lottery.compareResult(count);
+        lottery.prize();
+    }
+
+</script>
+</body>
+</html>
