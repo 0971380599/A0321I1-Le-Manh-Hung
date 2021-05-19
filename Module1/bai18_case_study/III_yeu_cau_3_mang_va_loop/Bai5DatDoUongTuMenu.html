@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 <table>
     <tr>
-        <th></th>
-    </tr>
-</table>
-<table>
-    <tr>
         <td>
-            <button type="button" value="1" onclick="more1()">1</button>
+            <button type="button" value="1" onclick="more('1')">1</button>
             <span>Cafe</span></td>
         <td>
-            <button type="button" value="2" onclick="more2()">2</button>
+            <button type="button" value="2" onclick="more('2')">2</button>
             <span>Cam vắt</span></td>
         <td>
-            <button type="button" value="3" onclick="more3()">3</button>
+            <button type="button" value="3" onclick="more('3')">3</button>
             <span>Nước ép cà rốt</span></td>
         <td>
-            <button type="button" value="4" onclick="more4()">4</button>
+            <button type="button" value="4" onclick="more('4')">4</button>
             <span>Nước ép cà chua</span></td>
     </tr>
     <tr>
         <td>
-            <button type="button" value="5" onclick="more5()">5</button>
+            <button type="button" value="5" onclick="more('5')">5</button>
             <span>Nước lọc</span></td>
         <td>
-            <button type="button" value="6" onclick="more6()">6</button>
+            <button type="button" value="6" onclick="more('6')">6</button>
             <span>Nước dừa</span></td>
         <td>
             <button type="button" value="7" onclick="exit()">7</button>
@@ -41,33 +46,20 @@
 <script>
     let array = [];
 
-    function more1() {
-        array.push("Cafe: 15000");
-        diplay()
-    }
-
-    function more2() {
-        array.push("Cam vắt: 20000");
-        diplay()
-    }
-
-    function more3() {
-        array.push("Nước ép cà rốt: 15000");
-        diplay()
-    }
-
-    function more4() {
-        array.push("Nước ép cà chua: 15000");
-        diplay()
-    }
-
-    function more5() {
-        array.push("Nước lọc: 10000");
-        diplay()
-    }
-
-    function more6() {
-        array.push("Nước dừa: 20000");
+    function more(number) {
+        if (number === '1') {
+            array.push("Cafe: 15000");
+        } else if (number === '2') {
+            array.push("Cam vắt: 20000");
+        } else if (number === '3') {
+            array.push("Nước ép cà rốt: 15000");
+        } else if (number === '4') {
+            array.push("Nước ép cà chua: 15000");
+        } else if (number === '5') {
+            array.push("Nước lọc: 10000");
+        } else {
+            array.push("Nước dừa: 20000");
+        }
         diplay()
     }
 

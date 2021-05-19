@@ -20,7 +20,7 @@
         this.isEmpty = function () {
             if (this.weightapple === 0) {
                 alert("quả táo đã hết");
-                return false
+                return false;
             }
             return true;
         };
@@ -33,7 +33,7 @@
             this.apple = apple;
         };
         this.getWeight = function () {
-            return this.weight
+            return this.weight;
         };
         this.getAppleInf = function () {
             return this.apple.getWeightApple();
@@ -46,11 +46,11 @@
             this.weight++;
         };
         this.say = function () {
-            document.write(this.name + " nói: tới lượt tôi ăn táo <br>")
+            document.write(this.name + " nói: tới lượt tôi ăn táo <br>");
         }
     };
     let adam = new Human("adam", "male", 45);
-    let eva = new Human("eva", "Femal", 40);
+    let eva = new Human("eva", "femal", 40);
     let apple = new Apple();
     apple.setWeightapple(10);
     adam.getWeightApple(apple);

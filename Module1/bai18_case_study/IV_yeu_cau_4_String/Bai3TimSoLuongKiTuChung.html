@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let enterInput1 = prompt("nhập xâu kí tự 1: ");
+    let enterInput2 = prompt("nhập xâu kí tự 2: ");
+    let s1 = [];
+    let s2 = [];
+    for (let i of enterInput1) {
+        s1.push(i);
+    }
+    for (let i of enterInput2) {
+        s2.push(i)
+    }
+    let count = 0;
+    for (let i = 0; i < s1.length; i++) {
+        for (let j = 0; j < s2.length; j++) {
+            if (s1[i] === s2[j]) {
+                count++;
+                s2.splice(j, 1);
+                break;
+            }
+        }
+    }
+    document.write("differentSymbolsNaive(s) = " + count);
+</script>
+</body>
+</html>

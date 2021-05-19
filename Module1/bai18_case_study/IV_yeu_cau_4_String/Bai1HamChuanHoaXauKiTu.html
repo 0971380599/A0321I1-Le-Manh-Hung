@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let enterInput = prompt("nhập xâu kí tự: ");
+    document.write("xâu kí tự trước khi chuẩn hóa : " + enterInput + "<br>");
+    arr = enterInput.split(' ');
+    arrNew = [];
+
+    function standardized() {
+        
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (j === 0) {
+                    arrNew.push(arr[i][0].toUpperCase());
+                    continue;
+                }
+                arrNew.push(arr[i][j].toLowerCase());
+            }
+            arrNew.push(" ")
+        }
+        document.write("xâu kí tự sau khi chuẩn hóa: " + arrNew.join("") + "<br>");
+    }
+    let value = 0;
+    let char = [];
+    function longestWord() {
+        for (let i = 0; i < arr.length; i++) {
+           if (arr[i].length > value ) {
+               char = [];
+               value = arr[i].length;
+               for (let j = 0; j < arr[i].length; j++) {
+                   if (j === 0) {
+                       char.push(arr[i][0].toUpperCase());
+                       continue;
+                   }
+                   char.push(arr[i][j].toLowerCase());
+               }
+           }
+        }
+        document.write("từ dài nhất trong xâu:" + char.join(''));
+    }
+    standardized();
+    longestWord();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let enterInput = prompt("nhập xâu kí tự: ");
+    let count = 0;
+    for (let i = 0; i < enterInput.length; i++) {
+        let checker = false;
+        let share = 1;
+        for (let j = 0; j < enterInput.length; j++) {
+            if (enterInput[i] === enterInput[j] && i !== j) {
+                checker = true;
+                share ++
+            }
+        }
+        if ( checker === false ) {
+            count++;
+        } else {
+            count += 1/share;
+        }
+    }
+    document.write("differentSymbolsNaive(s) = " + count)
+</script>
+</body>
+</html>
