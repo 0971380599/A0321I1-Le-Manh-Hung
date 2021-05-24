@@ -49,7 +49,7 @@
                 for (let i = 0; i < 6; i++) {
                     inputDisplay += "<select id='" + j + i + "'>";
                     for (let k = 0; k < 100; k++) {
-                        inputDisplay += "<option  style='width: 45px'>" + k + "</option>"
+                        inputDisplay += "<option  style='width: 45px' value='"+k+"'>" + k + "</option>"
                     }
                     inputDisplay += "</select>&ensp;";
                 }
@@ -65,7 +65,7 @@
             for (let j = 0; j < this.amount; j++) {
                 inputDisplay += "vé" + j + ":";
                 for (let i = 0; i < 6; i++) {
-                    inputDisplay += "<button id='" + j + i + "' type=\"button\" style='width: 45px'>" + Math.floor(Math.random() * 99) + "</button>&ensp;"
+                    inputDisplay += "&ensp;<input id='" + j + i + "' type=\"button\" value='"+ Math.floor(Math.random()*99)+"'' style='width: 45px'>"
                 }
                 inputDisplay += "<br><br>"
             }
@@ -81,7 +81,7 @@
         }
 
         compareResult(i) {
-            for (let j; j < i; j++) {
+            for (let j = 0 ; j < i; j++) {
                 if (document.getElementById("" + j + "5").value == result[5]) {
                     if (document.getElementById("" + j + "4").value == result[4]) {
                         if (document.getElementById("" + j + "3").value == result[3]) {
@@ -137,10 +137,10 @@
             buy()
         }
     }
-    lottery.result();
-    alert(result);
+    // lottery.result();
+    // alert(result);
     function checkValue() {
-        // lottery.result();
+        lottery.result();
         lottery.compareResult(count);
         lottery.prize();
     }
