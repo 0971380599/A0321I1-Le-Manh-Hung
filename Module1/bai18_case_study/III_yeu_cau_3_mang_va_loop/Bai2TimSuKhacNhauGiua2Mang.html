@@ -16,6 +16,7 @@
     for (let i = 0; i < numberB; i++) {
         b[i] = parseInt(prompt("b[" + i + "] = "));
     }
+
     let c = [];
     for (let i of b) {
         let check = false;
@@ -42,6 +43,8 @@
     c.sort(function (a,b) {
         return a-b;
     });
+    document.write(a +"<br>");
+    document.write(b +"<br>");
     document.write("missingValue(A, B) = " + c)
 </script>
 </body>

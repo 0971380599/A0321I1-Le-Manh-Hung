@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        p {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>Quản lý Công Nhân Trong Phân Xưởng</h1>
+<input type="text" placeholder="nhập tên SP" id="name">
+<input type="text" placeholder="Ngày Sinh" id="birth">
+<input type="text" placeholder="Địa Chỉ" id="address">
+<input type="text" placeholder="Lương" id="salary">
+<input type="text" placeholder="Chức vụ" id="position">
+<button type="button" onclick="addNewWorker()">ADD</button><br>
+<span> Số lượng công nhân</span>
+<span id="soLuong"></span>
+<p id="hienThi"></p>
+<script>
+    class Worker {
+        constructor(nameWorker, birthWorker, addressWorker, salary, position) {
+            this.nameWorker = nameWorker;
+            this.birthWorker = birthWorker;
+            this.addressWorker = addressWorker;
+            this.salary = salary;
+            this.position = position;
+        }
+
+        setNameWorker(nameWorker) {
+            this.nameWorker = nameWorker;
+        }
+
+        getNameWorker() {
+            return this.nameWorker;
+        }
+
+        setBirthWorker(birthWorker) {
+            this.birthWorker = birthWorker;
+        }
+
+        getBirthWorker() {
+            return this.birthWorker;
+        }
+
+        setAddressWorker(addressWorker) {
+            this.addressWorker = addressWorker;
+        }
+
+        getAddressWorker() {
+            return this.addressWorker;
+        }
+
+        setSalary(salary) {
+            this.salary = salary;
+        }
+
+        getSalary() {
+            return this.salary;
+        }
+
+        setPosition(position) {
+            this.position = position;
+        }
+
+        getPosition() {
+            return this.position;
+        }
+    }
+
+    let listWorker = [];
+    display(listWorker);
+
+    function addNewWorker() {
+        let nameWorker = document.getElementById("name").value;
+        let birthWorker = document.getElementById("birth").value;
+        let addressWorker = document.getElementById("address").value;
+        let salary = document.getElementById("salary").value;
+        let position = document.getElementById("position").value;
+        let worker = new Worker(nameWorker, birthWorker, addressWorker, salary, position);
+        if (document.getElementById("name").value === ""){
+            alert("Chưa nhập Họ và Tên vui lòng nhập lại")
+        }else if (document.getElementById("birth").value === ""){
+            alert("Chưa nhập ngày sinh vui lòng nhập lại")
+        }else if (document.getElementById("address").value === ""){
+            alert("Chưa nhập Địa Chỉ vui lòng nhập lại")
+        }else if (document.getElementById("salary").value === ""){
+            alert("Chưa nhập lương vui lòng nhập lại")
+        }else if (document.getElementById("position").value === ""){
+            alert("Chưa nhập chức vụ vui lòng nhập lại")
+        } else {
+            listWorker.push(worker);
+        }
+        document.getElementById("name").value = "";
+        document.getElementById("birth").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("salary").value = "";
+        document.getElementById("position").value = "";
+        display(listWorker);
+    }
+    function display(list) {
+        list.sort(function(a, b){
+            if (a.nameWorker.toLowerCase() < b.nameWorker.toLowerCase()) {return -1;}
+            if (a.nameWorker.toLowerCase() > b.nameWorker.toLowerCase()) {return 1;}
+            return 0;
+        });
+        let tableString = '<table border=\'0\' width=\'700\' cellspacing=\'0\' cellpadding=\'4\'>\n' +
+            '<tr>\n' +
+            '<th>STT</th>' +
+            '<th>Họ Và Tên</th>' +
+            '<th>Ngày Sinh</th>' +
+            '<th>Địa Chỉ</th>' +
+            '<th>Lương</th>' +
+            '<th>Chức Vụ</th>' +
+            '</tr>';
+        for (let i = 0; i < list.length; i++) {
+            console.log(list);
+            tableString +='<center>'+  '<tr>\n' +
+                '<td>'+'<center>' + (i + 1) + '</td>\n' +
+                '<td>' + '<center>'+ list[i].getNameWorker() + '</center>' + '</td>\n' +
+                '<td>' + '<center>'+ list[i].getBirthWorker() + '</center>' + '</td>\n' +
+                '<td>' + '<center>'+ list[i].getAddressWorker() + '</center>' + '</td>\n' +
+                '<td>' + '<center>'+ list[i].getSalary()  + '</center>' + '</td>\n' +
+                '<td>' + '<center>'+ list[i].getPosition() + '</center>' + '</td>\n' +
+                '</tr>'
+        }
+        tableString += '</table>';
+        document.getElementById("hienThi").innerHTML = tableString;
+        document.getElementById("soLuong").innerHTML = list.length;
+        console.log(listWorker)
+    }
+
+</script>
+</body>
+</html>

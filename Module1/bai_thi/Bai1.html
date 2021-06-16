@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("nhập số phần tử của mảng (lớn hơn 0 và bé hơn 51 phần tử): "));
+    let array = [];
+    let sum = 0;
+    let count = 0;
+    let average = 0;
+    if (number <= 50 && number > 0) {
+        for (let i = 0; i < number; i++) {
+            array[i] = parseInt(prompt("array[" + i + "] = "));
+            if (array[i] % 3 === 0) {
+                sum += array[i];
+                count++;
+            }
+        }
+        document.write(array + '<br>');
+        average = sum / count;
+        document.write("trung bình cộng các số có trong mảng chia hết cho 3: " + average);
+    } else alert("nhập sai số phần tử của mảng")
+
+</script>
+</body>
+</html>
